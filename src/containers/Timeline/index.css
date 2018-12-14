@@ -9,7 +9,7 @@
 	width: 130px;
 	height: 170px;
 	position: relative;
-	//background: rgba(black, 0.2); // testing
+	// background: rgba(black, 0.2); // testing
 
 	&::before, &::after {
 		content: "";

@@ -2,18 +2,22 @@ import React from 'react'
 import HomeMenu from '../../component/HomeMenu'
 import HomeCarouel from '../../component/HomeCarouel'
 import HomeCard from '../../component/HomeCard'
-import WYMusic from '../../component/WYMusic'
-
+import Login from '../Login'
 import { fetchUsers } from '../../api'
 
 
-const BlogHome = () => (
+class BlogHome extends React.Component {
+
+  render(){
+    return(
     <div>
-      <HomeMenu />
-      <HomeCarouel />
-      <HomeCard />
-      <WYMusic />
+      <Login {...this.props} />
+      <HomeMenu {...this.props} />
+      <HomeCarouel {...this.props} />
+      <HomeCard {...this.props} />
     </div>
-);
+  )
+}
+};
 
 export default BlogHome

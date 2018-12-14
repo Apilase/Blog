@@ -86,30 +86,32 @@ const images = [
     url: 'https://material-ui.com/static/images/grid-list/breakfast.jpg',
     title: 'Public',
     width: '25%',
-    jump:'article',
+    jump:'/public',
   },
   {
     url: 'https://material-ui.com/static/images/grid-list/burgers.jpg',
     title: 'Journal',
     width: '25%',
-    jump:'journal',
+    jump:'/journal',
   },
   {
     url: 'https://material-ui.com/static/images/grid-list/camera.jpg',
     title: 'Pic',
     width: '25%',
-    jump: 'picture',
+    jump: '/picture',
   },
   {
     url: 'https://material-ui.com/static/images/grid-list/camera.jpg',
     title: 'Timeline',
     width: '25%',
-    jump:'timeline',
+    jump:'/timeline',
   },
 ];
 
 class HomeCard extends React.Component {
-
+  link = (url) => {
+    this.props.history.push(url);
+  }
   render() {
     const { classes } = this.props;
     return (
@@ -123,6 +125,7 @@ class HomeCard extends React.Component {
             style={{
               width: image.width,
             }}
+            onClick={()=>{this.link(image.jump)}}
           >
             <span
               className={classes.imageSrc}

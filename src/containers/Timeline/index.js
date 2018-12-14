@@ -12,7 +12,8 @@ class Loading extends React.Component {
             <span class="binary"></span>
         </div>
       </div>
-    )};
+    );
+}
 }
 
 export default Loading
