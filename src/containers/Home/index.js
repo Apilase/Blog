@@ -11,8 +11,6 @@ class BlogHome extends React.Component {
   render(){
     return(
     <div>
-      <Login {...this.props} />
-      <HomeMenu {...this.props} />
       <HomeCarouel {...this.props} />
       <HomeCard {...this.props} />
     </div>

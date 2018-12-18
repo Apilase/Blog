@@ -5,6 +5,7 @@ import pink from '@material-ui/core/colors/pink';
 import green from '@material-ui/core/colors/green';
 import Zoom from '@material-ui/core/Zoom';
 import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
 import MusicVideo from '@material-ui/icons/MusicVideo';
 import HomeMusic from '../HomeMusic';
 import './index.css'
@@ -17,11 +18,11 @@ const styles = {
     cursor:'pointer',
   },
   musicBox: {
-    width:'40px',
-    height:'40px',
+    width:'65px',
+    height:'65px',
     position:'fixed',
     zIndex:'1000',
-    top:'60%',
+    top:'80%',
     right:'20px',
   },
   HomeMusicBox:{
@@ -54,9 +55,9 @@ class WYMusic extends React.Component {
     console.log("musicStatus" + this.state.musicStatus);
     return (
       <div className={classes.musicBox}>
-        <Avatar className={classes.avatar+" music-icon-action"+(this.state.musicStatus===1?"":" pause")} onClick={()=>{this.setState({musicBox:this.state.musicBox===0?1:0})}}>
+        <Fab color="primary" aria-label="Add" className={classes.avatar+" music-icon-action"+(this.state.musicStatus===1?"":" pause")} onClick={()=>{this.setState({musicBox:this.state.musicBox===0?1:0})}}>
           <MusicVideo />
-        </Avatar>
+        </Fab>
         <Zoom in={this.state.musicBox == 0 ? false:true}>
           <div className={classes.HomeMusicBox+" af-arrow"} >
             <HomeMusic handleMusicStatus={this.handleMusicStatus.bind(this)} />

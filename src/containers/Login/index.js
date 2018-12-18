@@ -19,6 +19,9 @@ import './index.css'
 const styles = {
   appBar: {
     position: 'relative',
+    background:'rgba(255,255,255,0.3)',
+    color:'#a79563 !important',
+    boxShadow:'0px 0px 0px 0px rgba(0, 0, 0, 0.2)'
   },
   flex: {
     flex: 1,
@@ -41,12 +44,15 @@ class Login extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+  componentDidMount(){
+    this.props.onRef(this)
+  }
 
   render() {
     const { classes } = this.props;
     return (
       <div>
-        <Button onClick={this.handleClickOpen}>Open full-screen dialog</Button>
+
         <Dialog
           fullScreen
           open={this.state.open}
@@ -55,26 +61,18 @@ class Login extends React.Component {
         >
           <AppBar className={classes.appBar}>
             <Toolbar>
+
+              <Typography variant="h6" color="inherit" className={classes.flex}>
+                Login
+              </Typography>
               <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
                 <CloseIcon />
               </IconButton>
-              <Typography variant="h6" color="inherit" className={classes.flex}>
-                Sound
-              </Typography>
-              <Button color="inherit" onClick={this.handleClose}>
-                save
-              </Button>
             </Toolbar>
           </AppBar>
-          <List>
-            <ListItem button>
-              <ListItemText primary="Phone ringtone" secondary="Titania" />
-            </ListItem>
-            <Divider />
-            <ListItem button>
-              <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-            </ListItem>
-          </List>
+          <div>
+            <h1>login</h1>
+          </div>
         </Dialog>
       </div>
     );

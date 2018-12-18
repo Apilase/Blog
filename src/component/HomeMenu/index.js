@@ -46,7 +46,7 @@ class PrimarySearchAppBar extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               Apilase Blog
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit" onClick={this.props.login}>Login</Button>
 
           </Toolbar>
         </AppBar>
