@@ -35,6 +35,15 @@ const styles = theme => ({
 
 class PrimarySearchAppBar extends React.Component {
 
+  constructor(props)
+  {
+    super(props);
+    console.log(this.props);
+    this.state = {
+      loginStatus: false,
+    }
+    console.log(props.state);
+  }
 
   render() {
     const { classes } = this.props;
@@ -46,7 +55,11 @@ class PrimarySearchAppBar extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               Apilase Blog
             </Typography>
-            <Button color="inherit" onClick={this.props.login}>Login</Button>
+            {!this.state.loginStatus ? <Button color="inherit" onClick={this.props.login}>Login</Button> :
+            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+              {this.props.state.loginName}
+            </Typography>
+          }
 
           </Toolbar>
         </AppBar>

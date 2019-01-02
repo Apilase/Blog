@@ -16,6 +16,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import './index.css'
 
+import LoginText from '../../component/LoginText'
+
 const styles = {
   appBar: {
     position: 'relative',
@@ -58,6 +60,7 @@ class Login extends React.Component {
           open={this.state.open}
           onClose={this.handleClose}
           TransitionComponent={Transition}
+          style={{opacity:0.9}}
         >
           <AppBar className={classes.appBar}>
             <Toolbar>
@@ -71,7 +74,7 @@ class Login extends React.Component {
             </Toolbar>
           </AppBar>
           <div>
-            <h1>login</h1>
+            <LoginText close={this.handleClose} login={this.props.login} />
           </div>
         </Dialog>
       </div>
