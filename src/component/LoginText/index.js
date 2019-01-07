@@ -108,6 +108,7 @@ class LoginText extends React.Component {
     if(this.validate())
     {
       console.log('去登录');
+      this.props.login(this.state.account);
       this.props.close();
     }
     //this.setState(state => ({ showSurePassword: !state.showSurePassword }));

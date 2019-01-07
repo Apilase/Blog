@@ -37,14 +37,16 @@ class BlogHome extends React.Component {
   }
 
   login = (e) => {
-    this.setState({loginName:e,loginStatus:true});
+    console.log("I'm Login!");
+    this.setState({loginName: e,loginStatus:true});
+    console.log(this.state.loginStatus);
   }
 
   render(){
     return(
     <div>
       <Login onRef={this.onRef} {...this.props} login={this.login} />
-      <HomeMenu {...this.props} login={this.click} />
+      <HomeMenu {...this.props} data={this.state} login={this.click} />
       <iframe src="/home" id="myiframe" scrolling="no"></iframe>
       <WYMusic />
     </div>

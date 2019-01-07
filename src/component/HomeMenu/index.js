@@ -40,7 +40,8 @@ class PrimarySearchAppBar extends React.Component {
     super(props);
     console.log(this.props);
     this.state = {
-      loginStatus: false,
+      loginStatus: this.props.data.loginStatus,
+      loginName: this.props.data.loginName
     }
     console.log(props.state);
   }
@@ -57,7 +58,7 @@ class PrimarySearchAppBar extends React.Component {
             </Typography>
             {!this.state.loginStatus ? <Button color="inherit" onClick={this.props.login}>Login</Button> :
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              {this.props.state.loginName}
+              {this.state.loginName}
             </Typography>
           }
 
